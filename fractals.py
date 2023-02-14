@@ -23,18 +23,19 @@ def nieuwe_lengte (huidige_lengte):
 
 def huisje(lengte, aantal, richting):
 
-        #kleur
-
-    if aantal == 14:
-       t.pencolor('#006666')
+    # kleur
     
-    if aantal == 11:
-        t.pencolor('#008080')
+    if lengte <  100:
+       t.pencolor('#810D3C')
     
-    if aantal == 7:
-        t.pencolor('#66b2b2')
-    if aantal == 5:
-        t.pencolor('#b2d8d8')
+    if lengte < 50:
+        t.pencolor('#A80D3C')
+    
+    if lengte < 25:
+        t.pencolor('#A80D5D')
+    if lengte < 12:
+        t.pencolor('#D61177')
+    
     
     # huisje
     t.setheading(richting)
