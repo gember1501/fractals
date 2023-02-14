@@ -5,9 +5,9 @@ t.shape()
 
 
 t.speed(0)
-t.color('#004c4c')
+t.color('#810D3C')
 t.hideturtle()
-t. pensize(1)
+t. pensize(3)
 
 def nieuwe_lengte (huidige_lengte):
     # pythagoraske
