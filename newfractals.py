@@ -1,11 +1,14 @@
 import cairo 
 
-def huisje(x, y, grootte):
 
-    context.rectangle(x, y, grootte, grootte)
+def huisje(ctx, x, y, grootte):
+
+    ctx.rectangle(x, y, grootte, grootte)
 
 with cairo.SVGSurface("newfractal.svg", 700, 700) as surface:
     context = cairo.Context(surface)
-    huisje(100, 100, 100)
+    context.set_source_rgba(0, 0, 0, 1)
+    huisje(context, 100, 100, 100)
+    context.fill()
 
 print("File Saved")
