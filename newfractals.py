@@ -1,4 +1,4 @@
-import cairo 
+import cairo
 import math as m
 
 
@@ -19,19 +19,28 @@ def huisje(ctx, x, y, grootte, hoek, aantal):
 
 
     # ctx.rectangle(x, y, 3, 3)
-    ctx.translate(x, y )
-    ctx.rotate(hoek*m.pi/180)
-    context.set_source_rgba(0, 0, 0, 1)
+    
+    if hoek == 315:
+        ctx.translate(x, y )
+        ctx.rotate(hoek*m.pi/180)
+        ctx.set_source_rgba(0, 0, 0, 1)
+        ctx.rectangle(0, 0 - grootte, grootte, grootte)
+        triangle(ctx, grootte, 0, 0 - grootte)
 
+    else:
+        ctx.translate(x, y)
+        ctx.translate(hoek*m.pi/180)
+        ctx.set_source_rgba(0, 0, 0, 1)
+        ctx.rectangle(0, 0, grootte, grootte)
 
-    ctx.rectangle(0, 0 - grootte, grootte, grootte)
-    triangle(ctx, grootte, 0, 0 - grootte)
 
     if aantal > 0:
-        grootte_nw = nieuwe_lengte(grootte)
-        aantal_nw = aantal - 1
-        huisje(ctx, 0, 0-grootte, grootte_nw, 315, aantal_nw)
-        #huisje(ctx, 0, 0-grootte, grootte_nw, 45, aantal_nw)
+            grootte_nw = nieuwe_lengte(grootte)
+            aantal_nw = aantal - 1
+            huisje(ctx, 0, 0-grootte, grootte_nw, 315, aantal_nw)
+            #huisje(ctx, 0, 0-grootte, grootte_nw, 45, aantal_nw)
+        
+        
     
 
 def nieuwe_lengte (huidige_lengte):
